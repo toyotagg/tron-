@@ -1,0 +1,49 @@
+﻿## profanity.exe-tron
+
+- 先查看显卡兼容性运行"GPU环境检测"。
+- `windows` 系统可直接运行 `start.bat` 启动程式。
+- 对于有集成显卡的设备，请运行 `start_disable_integrated_gpu.bat`。
+- 请参考项目 `README.md` 参数介绍，自行编辑 `start.bat` 配置软件运行参数。
+- 设备有集成显卡的，请添加 `--skip 1` 把集成显卡过滤之，否则可能会导致：1. 跑不起来，2. 生成的地址和私钥不匹配。
+- 如果提示 `vcruntime140_1.dll` 相关异常，请安装 `visual studio` 应用程序，官方下载链接：[https://visualstudio.microsoft.com/zh-hans/vs/](https://visualstudio.microsoft.com/zh-hans/vs/)
+- 关于软件运行速度，以及诸如跑什么规则的地址需要多长时间等问题，请阅读项目主页 `README.md` 速度章节说明。
+
+## 遇到问题？
+
+> 如果有问题，请首先参考项目主页文档说明：[https://github.com/sponsord/profanity.exe-tron](https://github.com/sponsord/profanity.exe-tron)
+
+
+## 命令介绍
+
+```bash
+Usage: ./profanity.exe [OPTIONS]
+
+  Help:
+    --help              Show help information
+
+  Modes with arguments:
+    --matching          Matching input, file or single address.
+
+  Matching configuration:
+    --prefix-count      Minimum number of prefix matches, default 0
+    --suffix-count      Minimum number of suffix matches, default 6
+    --quit-count        Exit the program when the generated number is greater than, default 0
+
+  Device control:
+    --skip              Skip device given by index
+
+  Output control:
+    --output            The file to output the results to
+    --post              The url to post the results to
+
+Examples:
+
+  ./profanity.exe --matching profanity.exe.txt
+  ./profanity.exe --matching profanity.exe.txt --skip 1
+  ./profanity.exe --matching profanity.exe.txt --output result.txt
+  ./profanity.exe --matching profanity.exe.txt --post http://127.0.0.1:7001/api
+  ./profanity.exe --matching profanity.exe.txt --prefix-count 1 --suffix-count 8
+  ./profanity.exe --matching profanity.exe.txt --prefix-count 1 --suffix-count 10 --quit-count 1
+  ./profanity.exe --matching TUqEg3dzVEJNQSVW2HY98z5X8SBdhmao8D --prefix-count 2 --suffix-count 4 --quit-count 1
+
+
