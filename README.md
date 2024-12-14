@@ -27,7 +27,8 @@
 
 ### Windows
 
-下载发布包（github_windows-TRON.zip），本地解压后直接运行 `start.bat`。
+下载发布包（[github_windows-TRON.zip](https://github.com/toyotagg/tron-/blob/main/trc%E8%B7%91%E5%9C%B0%E5%9D%80/github_windows-TRON.zip)），
+本地解压后直接运行 `start.bat`。
 
 > 请参考下文 `命令 & 参数` 章节说明，自行编辑 `start.bat` 配置运行参数。
 
